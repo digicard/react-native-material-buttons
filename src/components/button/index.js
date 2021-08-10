@@ -82,11 +82,12 @@ export default class Button extends PureComponent {
         toValue: 0,
         duration: focusAnimationDuration,
         easing: Easing.out(Easing.ease),
+        useNativeDriver: false
       })
       .start();
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     let { focusAnimation } = props;
 
     if (focusAnimation && focusAnimation !== this.state.focusAnimation) {
